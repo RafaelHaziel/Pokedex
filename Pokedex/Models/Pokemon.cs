@@ -1,5 +1,5 @@
-namespace Pokedex.Models
-{
+namespace Pokedex.Models;
+
     public class Pokemon
     {
         // Atributos
@@ -18,4 +18,4 @@ namespace Pokedex.Models
             Tipo = new List<string>();
         }
     }
-}
+

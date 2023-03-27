@@ -1,5 +1,6 @@
 using Pokedex.Models;
 namespace Pokedex.Services;
+    
     public interface IPokeService
     {
         List<Pokemon> GetPokemons();

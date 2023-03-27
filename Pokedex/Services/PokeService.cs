@@ -73,10 +73,8 @@ public class PokeService : IPokeService
     {
         if (string.IsNullOrEmpty(_session.HttpContext.Session.GetString("Tipos")))
         {
-            _session.HttpContext.Session
-            .SetString("Pokemons", LerArquivo(pokemonFile));
-            _session.HttpContext.Session
-            .SetString("Tipos", LerArquivo(tiposFile));
+            _session.HttpContext.Session.SetString("Pokemons", LerArquivo(pokemonFile));
+            _session.HttpContext.Session.SetString("Tipos", LerArquivo(tiposFile));
         }
     }
 
