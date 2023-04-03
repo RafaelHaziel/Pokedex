@@ -15,8 +15,7 @@
             }
         </div>
         <div class="col text-center">
-            <h1 class="fs-1">@Model.Current.Nome <span class="fs-2 text-secondary">Nº
-                @Model.Current.Numero.ToString("000")</span></h1>
+            <h1 class="fs-1">@Model.Current.Nome <span class="fs-2 text-secondary">Nº @Model.Current.Numero.ToString("000")</span></h1>
         </div>
         <div class="col text-center">
             @if (Model.Next != null)
@@ -41,8 +40,7 @@
             <div class="btn-group">
                 @foreach (var tipo in Model.Current.Tipo)
                 {
-                    <a asp-action="Index" asp-route-tipo="@tipo.ToLower()" class="btn btn-lg text-white"
-                        style="background-color:@service.GetTipo(tipo).Cor">@tipo</a>
+                    <a asp-action="Index" asp-route-tipo="@tipo.ToLower()" class="btn btn-lg text-white" style="background-color:@service.GetTipo(tipo).Cor">@tipo</a>
                 }
             </div>
         </div>

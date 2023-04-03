@@ -18,16 +18,14 @@ public class PokeService : IPokeService
     public List<Pokemon> GetPokemons()
     {
         PopularSessao();
-        var pokemons = JsonSerializer.Deserialize<List<Pokemon>>
-        (_session.HttpContext.Session.GetString("Pokemons"));
+        var pokemons = JsonSerializer.Deserialize<List<Pokemon>>(_session.HttpContext.Session.GetString("Pokemons"));
         return pokemons;
     }
 
     public List<Tipo> GetTipos()
     {
         PopularSessao();
-        var tipos = JsonSerializer.Deserialize<List<Tipo>>
-        (_session.HttpContext.Session.GetString("Tipos"));
+        var tipos = JsonSerializer.Deserialize<List<Tipo>>(_session.HttpContext.Session.GetString("Tipos"));
         return tipos;
     }
 
@@ -52,12 +50,9 @@ public class PokeService : IPokeService
         var pokemons = GetPokemons();
         var poke = new DetailsDto()
         {
-            Current = pokemons.Where(p => p.Numero == Numero)
-            .FirstOrDefault(),
-            Prior = pokemons.OrderByDescending(p => p.Numero)
-            .FirstOrDefault(p => p.Numero < Numero),
-            Next = pokemons.OrderBy(p => p.Numero)
-            .FirstOrDefault(p => p.Numero > Numero),
+            Current = pokemons.Where(p => p.Numero == Numero).FirstOrDefault(),
+            Prior = pokemons.OrderByDescending(p => p.Numero).FirstOrDefault(p => p.Numero < Numero),
+            Next = pokemons.OrderBy(p => p.Numero).FirstOrDefault(p => p.Numero > Numero),
         };
         poke.Tipos = GetTipos();
         return poke;
