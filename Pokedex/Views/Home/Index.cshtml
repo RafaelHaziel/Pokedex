@@ -14,8 +14,7 @@
                 </button>
                 @foreach (var tipo in Model.Tipos)
                 {
-                    <button id="btn-@tipo.Nome.ToLower()" class="btn btn-sm my-2 text-white
-btn-filter"
+                    <button id="btn-@tipo.Nome.ToLower()" class="btn btn-sm my-2 text-white btn-filter"
                         onclick="filter('@tipo.Nome.ToLower()')"
                         style="background-color:@tipo.Cor">
                         @tipo.Nome
@@ -35,11 +34,9 @@ btn-filter"
             @foreach (var pokemon in Model.Pokemons)
             {
                 <div class="col">
-                    <div class="card shadow-sm cursor-pointer @string.Join(' ',
-pokemon.Tipo).ToLower()"
+                    <div class="card shadow-sm cursor-pointer @string.Join(' ',pokemon.Tipo).ToLower()"
                         onclick="GetInfo(@pokemon.Numero)">
-                        <img src="@pokemon.Imagem" class="card-img-top" width="100%"
-height="300" alt="@pokemon.Nome" />
+                        <img src="@pokemon.Imagem" class="card-img-top" width="100%"height="300" alt="@pokemon.Nome" />
                         <div class="card-body">
                             <p class="card-text mb-0">Nº @pokemon.Numero.ToString("000")</p>
                             <h3 class="card-title">@pokemon.Nome</h3>
