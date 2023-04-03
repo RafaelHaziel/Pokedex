@@ -45,7 +45,7 @@
                                     @foreach (var tipo in pokemon.Tipo)
                                     {
                                         <a asp-action="Index" asp-routetipo="@tipo.ToLower()" class="btn my-2 text-white"
-                                            style="backgroundcolor:@service.GetTipo(tipo).Cor">@tipo</a>
+                                            style="background-color:@service.GetTipo(tipo).Cor">@tipo</a>
                                     }
                                 </div>
                             </div>
